@@ -1,0 +1,1 @@
+import{S as o,i as r,s as i}from"../chunks/index.95ba0b19.js";import{g as u}from"../chunks/navigation.d70a8bb1.js";function l(e,t,n){let{data:a}=t;return a.user&&u("/",{replaceState:!0}),e.$$set=s=>{"data"in s&&n(0,a=s.data)},[a]}class d extends o{constructor(t){super(),r(this,t,l,null,i,{data:0})}}export{d as default};

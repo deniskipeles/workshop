@@ -1,0 +1,111 @@
+{
+	"/(super_admin)": [
+		"src/routes/(super_admin)/+layout.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/": [
+		"src/routes/+page.server.ts",
+		"src/routes/+layout.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/about-us": [
+		"src/routes/+layout.server.ts"
+	],
+	"/account": [
+		"src/routes/account/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/(super_admin)/admin/customers": [
+		"src/routes/(super_admin)/admin/customers/+page.server.ts",
+		"src/routes/(super_admin)/+layout.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/(super_admin)/admin/jobs": [
+		"src/routes/(super_admin)/admin/jobs/+page.server.ts",
+		"src/routes/(super_admin)/+layout.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/(super_admin)/admin/jobs/[job_id]": [
+		"src/routes/(super_admin)/admin/jobs/[job_id]/+page.server.ts",
+		"src/routes/(super_admin)/+layout.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/(super_admin)/admin/personnel": [
+		"src/routes/(super_admin)/admin/personnel/+page.server.ts",
+		"src/routes/(super_admin)/+layout.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/(super_admin)/admin/products": [
+		"src/routes/(super_admin)/admin/products/+page.server.ts",
+		"src/routes/(super_admin)/+layout.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/ai": [
+		"src/routes/ai/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/api/ai": [
+		"src/routes/api/ai/+server.ts"
+	],
+	"/api/ai/post": [
+		"src/routes/api/ai/post/+server.ts"
+	],
+	"/api/jobs": [
+		"src/routes/api/jobs/+server.ts"
+	],
+	"/api/jobs/requirements": [
+		"src/routes/api/jobs/requirements/+server.ts"
+	],
+	"/api/mails": [
+		"src/routes/api/mails/+server.ts"
+	],
+	"/api/products": [
+		"src/routes/api/products/+server.ts"
+	],
+	"/api/reviews": [
+		"src/routes/api/reviews/+server.ts"
+	],
+	"/api/services": [
+		"src/routes/api/services/+server.ts"
+	],
+	"/(client)/client/jobs": [
+		"src/routes/(client)/client/jobs/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/(client)/client/jobs/[job_id]": [
+		"src/routes/(client)/client/jobs/[job_id]/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/(client)/client/products": [
+		"src/routes/(client)/client/products/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/contacts": [
+		"src/routes/contacts/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/login": [
+		"src/routes/login/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/logout": [
+		"src/routes/logout/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/register": [
+		"src/routes/register/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/reviews": [
+		"src/routes/reviews/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/services": [
+		"src/routes/services/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/services/[service_id]": [
+		"src/routes/services/[service_id]/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	]
+}
