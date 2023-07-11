@@ -39,7 +39,6 @@ declare module '$env/static/private' {
 	export const npm_config_noproxy: string;
 	export const QT4_IM_MODULE: string;
 	export const HOME: string;
-	export const OLDPWD: string;
 	export const DESKTOP_SESSION: string;
 	export const npm_package_json: string;
 	export const GNOME_SHELL_SESSION_MODE: string;
@@ -157,7 +156,6 @@ declare module '$env/dynamic/private' {
 		npm_config_noproxy: string;
 		QT4_IM_MODULE: string;
 		HOME: string;
-		OLDPWD: string;
 		DESKTOP_SESSION: string;
 		npm_package_json: string;
 		GNOME_SHELL_SESSION_MODE: string;

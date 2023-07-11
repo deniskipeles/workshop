@@ -20,9 +20,9 @@ const getAIContext = async (company: Record) => {
             guides>>The question should relate to electrical and plumbing.
             If prices are involve they should be in kenya shillings. 
             The response should be answered in first person from company:${company?.name}<<
-            Given the products: >>${products}<<.
-            Given the services: >>${services}<<.
-            Given the Manpower/labor/specialists/personnel/workers: >>${workers}<<.
+            Given csv list of the products: >>${products}<<.
+            Given csv list of the services: >>${services}<<.
+            Given csv list of the Manpower/labor/specialists/personnel/workers: >>${workers}<<.
             Given about the company: >>${company?.ai_details}<<.`
   } catch (error) {
     console.log(error);
@@ -38,7 +38,7 @@ const getServices = async (company: Record) => {
     let { name, description, price, available } = obj;
     return { name, description, price, available };
   });
-  return JSON.stringify(arr);
+  return jsonToCsv(arr,['name','price','available']);
 };
 
 const getProducts = async (company: Record) => {
@@ -49,7 +49,7 @@ const getProducts = async (company: Record) => {
     let { name, price, available, discount, colors, material } = obj;
     return { name, price, available, discount, colors, material };
   });
-  return JSON.stringify(arr);
+  return jsonToCsv(arr,['name','price','available','discount as percentage_discount']);
 };
 
 const getWorkers = async (company: Record) => {
@@ -61,7 +61,7 @@ const getWorkers = async (company: Record) => {
   // console.log(workers);
   let users = workers?.map((obj) => {
     let user = obj?.expand?.user_id;
-    let u = {};
+    let u = {name:'',email:'',username:'',phone_number:''};
     if (!Array.isArray(user)) {
       u = {
         name: user?.name,
@@ -76,5 +76,37 @@ const getWorkers = async (company: Record) => {
       worker_type: obj?.worker_type,
     };
   });
-  return JSON.stringify(users);
+  return jsonToCsv(users,['name','email','phone_number','position','worker_type']);
 };
+
+
+
+function jsonToCsv(jsonArray: any[], fields: string[]): string {
+  if (jsonArray.length === 0) {
+    return '';
+  }
+
+  const csvRows = [];
+
+  // Extract original field names and renamed field names
+  const fieldNames = fields.map(field => field.split(' as ')[0].trim());
+  const renamedFieldNames = fields.map(field => {
+    const parts = field.split(' as ');
+    return parts.length > 1 ? parts[1].trim() : parts[0].trim();
+  });
+
+  // Push the header row with renamed field names
+  csvRows.push(renamedFieldNames.join(','));
+
+  // Iterate over each object in the array
+  for (const item of jsonArray) {
+    const values = fieldNames.map((fieldName, index) => {
+      const value = item[fieldName];
+      return typeof value === 'string' ? `"${value}"` : value;
+    });
+    csvRows.push(values.join(','));
+  }
+
+  // Join rows with line breaks
+  return csvRows.join('\n');
+}
