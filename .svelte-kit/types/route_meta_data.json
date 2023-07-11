@@ -47,9 +47,6 @@
 	"/api/ai": [
 		"src/routes/api/ai/+server.ts"
 	],
-	"/api/ai/post": [
-		"src/routes/api/ai/post/+server.ts"
-	],
 	"/api/jobs": [
 		"src/routes/api/jobs/+server.ts"
 	],

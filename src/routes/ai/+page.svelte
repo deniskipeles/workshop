@@ -15,7 +15,7 @@
     user: any;
     company: any;
   };
-  console.log(data?.context)
+  // console.log(data?.context)
 
   let error: any = null;
   let loading = false;
@@ -35,6 +35,7 @@
 
     if (res?.success) {
       loading = false;
+      // console.log(res?.data)
       ai_result_store.set(res?.data);
     } else {
       loading = false;
@@ -97,7 +98,7 @@
 {/if}
 
 <pre class="bg-gray-100 text-lg rounded p-4 shadow-md whitespace-pre-wrap">
-  {$ai_result_store.answer}
+  {@html $ai_result_store.answer}
   {#if $ai_result_store.images.length > 0}
     <Gallery
       class="gap-2 grid-cols-2"
