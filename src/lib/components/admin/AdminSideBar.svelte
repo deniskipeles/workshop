@@ -2,7 +2,7 @@
     let dropDownsData = [];
     let noDropDownsData = [
       {
-        label: "Jobs",
+        label: "Quotations",
         url: "/admin/jobs",
       },
       {
